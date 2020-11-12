@@ -64,6 +64,7 @@ namespace WebWindows
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)] static extern IntPtr WebWindow_getHwnd_win32(IntPtr instance);
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Auto)] static extern void WebWindow_SetTitle(IntPtr instance, string title);
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)] static extern void WebWindow_Show(IntPtr instance);
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)] static extern void WebWindow_FullScreenMode(IntPtr instance);
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)] static extern void WebWindow_WaitForExit(IntPtr instance);
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)] static extern void WebWindow_Invoke(IntPtr instance, InvokeCallback callback);
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Auto)] static extern void WebWindow_NavigateToString(IntPtr instance, string content);
@@ -169,6 +170,7 @@ namespace WebWindows
         }
 
         public void Show() => WebWindow_Show(_nativeWebWindow);
+        public void FullScreenMode() => WebWindow_FullScreenMode(_nativeWebWindow);
         public void WaitForExit() => WebWindow_WaitForExit(_nativeWebWindow);
 
         public string Title

@@ -7,6 +7,7 @@ namespace HelloWorldApp
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             var window = new WebWindow("My great app", options =>
@@ -20,10 +21,12 @@ namespace HelloWorldApp
 
             window.OnWebMessageReceived += (sender, message) =>
             {
-                window.SendMessage("Got message: " + message);
+                //window.SendMessage("Got message: " + message);
+                window.FullScreenMode();
             };
 
             window.NavigateToLocalFile("wwwroot/index.html");
+           
             window.WaitForExit();
         }
     }

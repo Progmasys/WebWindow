@@ -30,6 +30,11 @@ extern "C"
 		return new WebWindow(title, parent, webMessageReceivedCallback);
 	}
 
+	EXPORTED void WebWindow_FullScreenMode(WebWindow* instance)
+	{
+		instance->FullScreenMode();
+	}
+
 	EXPORTED void WebWindow_dtor(WebWindow* instance)
 	{
 		delete instance;

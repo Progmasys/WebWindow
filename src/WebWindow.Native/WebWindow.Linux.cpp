@@ -113,6 +113,11 @@ void WebWindow::SetTitle(AutoString title)
 	gtk_window_set_title(GTK_WINDOW(_window), title);
 }
 
+void WebWindow::FullScreenMode()
+{
+	gtk_window_fullcreen(GTK_WINDOW(_window));
+}
+
 void WebWindow::WaitForExit()
 {
 	gtk_main();
